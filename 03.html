@@ -100,22 +100,49 @@
                 <svg class="h-10 w-10 text-[#007aff]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" /></svg>
                 <span class="text-xl font-bold text-gray-800">聯發科技 (2454)</span>
             </div>
-            <!-- MODIFIED: Added new nav link -->
-             <div class="hidden md:flex items-center space-x-2 text-gray-600 font-medium">
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-2 text-gray-600 font-medium">
                 <a href="#hero" class="px-4 py-2 rounded-full transition-colors hover:bg-gray-100 hover:text-blue-600">關鍵指標</a>
                 <a href="#chairman" class="px-4 py-2 rounded-full transition-colors hover:bg-gray-100 hover:text-blue-600">致股東報告書</a>
                 <a href="#financials" class="px-4 py-2 rounded-full transition-colors hover:bg-gray-100 hover:text-blue-600">財務透視</a>
                 <a href="#strategy" class="px-4 py-2 rounded-full transition-colors hover:bg-gray-100 hover:text-blue-600">技術藍圖</a>
                 <a href="#qna" class="px-4 py-2 rounded-full transition-colors hover:bg-gray-100 hover:text-blue-600">投資人問答</a>
-                <!-- MODIFICATION: Removed target="_blank" and added an ID -->
                 <a href="https://king763573.github.io/stock/04.html" id="advanced-report-link" class="px-4 py-2 rounded-full transition-colors font-semibold text-purple-600 hover:bg-purple-100 hover:text-purple-800">進階財報分析</a>
             </div>
+
             <div class="flex items-center space-x-4">
                 <button id="interaction-audio-toggle" class="px-4 py-2 rounded-lg bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors shadow-sm">
                     股東互動區
                 </button>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon when menu is closed. -->
+                        <svg id="menu-open-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Icon when menu is open. -->
+                        <svg id="menu-close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </nav>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#hero" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">關鍵指標</a>
+                <a href="#chairman" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">致股東報告書</a>
+                <a href="#financials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">財務透視</a>
+                <a href="#strategy" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">技術藍圖</a>
+                <a href="#qna" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">投資人問答</a>
+                <a href="https://king763573.github.io/stock/04.html" id="advanced-report-link-mobile" class="block px-3 py-2 rounded-md text-base font-medium text-purple-600 hover:text-purple-800 hover:bg-purple-50">進階財報分析</a>
+            </div>
+        </div>
     </header>
 
     <main class="container mx-auto px-4 md:px-6 py-8 md:py-12">
@@ -410,6 +437,15 @@
                 window.location.replace(this.href);
             });
         }
+        
+        // MODIFICATION: Add click listener for the advanced report link in MOBILE menu
+        const advancedReportLinkMobile = document.getElementById('advanced-report-link-mobile');
+        if (advancedReportLinkMobile) {
+            advancedReportLinkMobile.addEventListener('click', function(event) {
+                event.preventDefault();
+                window.location.replace(this.href);
+            });
+        }
 
         // Audio control for interaction button
         const audio = document.getElementById('interaction-audio');
@@ -435,6 +471,28 @@
             audioToggleBtn.textContent = '股東互動區';
             audioToggleBtn.classList.remove('bg-red-500', 'hover:bg-red-600');
             audioToggleBtn.classList.add('bg-blue-500', 'hover:bg-blue-600');
+        });
+        
+        // NEW: Mobile Menu Toggle Logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuOpenIcon.classList.toggle('hidden');
+            menuCloseIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuOpenIcon.classList.remove('hidden');
+                menuCloseIcon.classList.add('hidden');
+            });
         });
 
         // 區塊一：數字滾動動畫

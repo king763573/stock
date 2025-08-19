@@ -376,27 +376,26 @@
 
         // 財務數據 (單位: 百萬新台幣 / EPS為新台幣元)
         const financialData = [
-            { year: '2020', revenue: 322466, operatingIncome: 41926, netIncome: 40917, eps: 26.17, grossMargin: 43.4, operatingMargin: 13.0, netProfitMargin: 12.7 },
-            { year: '2021', revenue: 496674, operatingIncome: 108041, netIncome: 111421, eps: 70.56, grossMargin: 46.8, operatingMargin: 21.7, netProfitMargin: 22.4 },
-            { year: '2022', revenue: 548796, operatingIncome: 126789, netIncome: 118141, eps: 74.60, grossMargin: 49.3, operatingMargin: 23.1, netProfitMargin: 21.5 },
-            { year: '2023', revenue: 433060, operatingIncome: 71855, netIncome: 76979, eps: 48.51, grossMargin: 47.8, operatingMargin: 16.6, netProfitMargin: 17.8 },
-            { year: '2024E', revenue: 530586, operatingIncome: 102356, netIncome: 106387, eps: 66.92, grossMargin: 49.6, operatingMargin: 19.3, netProfitMargin: 20.0 },
+            { year: '2020', revenue: 322145, operatingIncome: 43219, netIncome: 41438, eps: 26.01, grossMargin: 43.94, operatingMargin: 12.86, netProfitMargin: 12.7 },
+            { year: '2021', revenue: 493414, operatingIncome: 108040, netIncome: 111872, eps: 70.56, grossMargin: 46.94, operatingMargin: 22.67, netProfitMargin: 22.4 },
+            { year: '2022', revenue: 548796, operatingIncome: 126788, netIncome: 118625, eps: 74.60, grossMargin: 49.36, operatingMargin: 21.62, netProfitMargin: 21.5 },
+            { year: '2023', revenue: 433446, operatingIncome: 71800, netIncome: 77190, eps: 48.51, grossMargin: 47.84, operatingMargin: 17.81, netProfitMargin: 17.8 },
+            { year: '2024', revenue: 530586, operatingIncome: 102411, netIncome: 107140, eps: 66.92, grossMargin: 49.64, operatingMargin: 20.19, netProfitMargin: 20.0 },
         ];
 
         // 季度財務數據 (單位: 百萬新台幣 / EPS為新台幣元)
         const quarterlyData = [
-            { quarter: '2023Q1', revenue: 95652, netIncome: 16900, eps: 10.64 },
-            { quarter: '2023Q2', revenue: 103504, netIncome: 16900, eps: 10.07 },
-            { quarter: '2023Q3', revenue: 110071, netIncome: 18560, eps: 11.64 },
-            { quarter: '2023Q4', revenue: 123833, netIncome: 24600, eps: 16.16 },
-            { quarter: '2024Q1', revenue: 133458, netIncome: 31630, eps: 19.85 },
-            { quarter: '2024Q2', revenue: 150369, netIncome: 30660, eps: 16.19 },
-            { quarter: '2024Q3', revenue: 159400, netIncome: 30940, eps: 15.94 },
-            { quarter: '2024Q4', revenue: 149400, netIncome: 25900, eps: 14.94 },
+            { quarter: '2023Q1', revenue: 95651, netIncome: 16890, eps: 10.64 },
+            { quarter: '2023Q2', revenue: 98135, netIncome: 16019, eps: 10.07 },
+            { quarter: '2023Q3', revenue: 110097, netIncome: 18569, eps: 11.64 },
+            { quarter: '2023Q4', revenue: 129562, netIncome: 25713, eps: 16.17 },
+            { quarter: '2024Q1', revenue: 133458, netIncome: 31654, eps: 19.85 },
+            { quarter: '2024Q2', revenue: 127271, netIncome: 25955, eps: 16.19 },
+            { quarter: '2024Q3', revenue: 131813, netIncome: 25589, eps: 15.94 },
+            { quarter: '2024Q4', revenue: 138043, netIncome: 23941, eps: 14.96 },
             { quarter: '2025Q1', revenue: 153312, netIncome: 29529, eps: 18.43 },
-            { quarter: '2025Q2E(預)', revenue: 147200, netIncome: 28000, eps: 17.54 }, // Adjusted based on Yahoo News and Q1 actuals
-            { quarter: '2025Q3E(預)', revenue: 159400, netIncome: 31000, eps: 18.00 }, // Adjusted based on Yahoo News and Q1 actuals
-        ];
+            { quarter: '2025Q2', revenue: 150368, netIncome: 28064, eps: 17.50 }, // Adjusted based on Yahoo News and Q1 actuals
+         ];
 
         // 研發費用數據 (單位: 百萬新台幣 / 佔營收比重: %)
         const rAndDData = [
@@ -404,7 +403,7 @@
             { year: '2021', randD: 98000, randD_pct_revenue: 19.7 },
             { year: '2022', randD: 108000, randD_pct_revenue: 19.7 },
             { year: '2023', randD: 100000, randD_pct_revenue: 23.1 },
-            { year: '2024E', randD: 136630, randD_pct_revenue: 25.7 },
+            { year: '2024', randD: 136630, randD_pct_revenue: 25.7 },
         ];
 
         // 資本支出數據 (單位: 百萬新台幣) - Fabless company, so capex is for R&D equipment, offices, etc.
@@ -413,16 +412,16 @@
             { year: '2021', capex: 25000 },
             { year: '2022', capex: 30000 },
             { year: '2023', capex: 20000 },
-            { year: '2024E', capex: 22000 },
+            { year: '2024', capex: 22000 },
         ];
 
         // 股東權益報酬率 (ROE) 與 資產報酬率 (ROA) 數據 (單位: %)
         const roeRoaData = [
-            { year: '2020', roe: 18.5, roa: 9.0 },
-            { year: '2021', roe: 36.0, roa: 18.0 },
-            { year: '2022', roe: 30.5, roa: 14.5 },
-            { year: '2023', roe: 20.0, roa: 9.5 },
-            { year: '2024E', roe: 27.25, roa: 12.4 },
+            { year: '2020', roe: 12.24, roa: 8.46 },
+            { year: '2021', roe: 27.88, roa: 18.46 },
+            { year: '2022', roe: 27.73, roa: 17.33 },
+            { year: '2023', roe: 20.42, roa: 12.29 },
+            { year: '2024', roe: 27.30, roa: 16.10 },
         ];
 
         function createSection(title, contentHtml) {
@@ -534,35 +533,35 @@
 
         const financialAnalysisContent = `
             <div class="mb-8">
-                <h3 class="text-xl font-semibold text-gray-700 mb-4">2025年第一季財務亮點</h3>
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">2025年第二季財務亮點</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="stat-card">
                         <div class="text-gray-600 text-sm flex items-center">
                             <i class="fas fa-money-bill-wave mr-2"></i>季度營收
                         </div>
-                        <div class="text-2xl font-bold text-blue-700 mt-2">1,533.12億</div>
+                        <div class="text-2xl font-bold text-blue-700 mt-2">1,503.68億</div>
                         <div class="text-gray-600 text-sm mt-1">新台幣</div>
                     </div>
                     <div class="stat-card">
                         <div class="text-gray-600 text-sm flex items-center">
                             <i class="fas fa-chart-line mr-2"></i>季度淨利
                         </div>
-                        <div class="text-2xl font-bold text-green-600 mt-2">295.29億</div>
+                        <div class="text-2xl font-bold text-green-600 mt-2">280.64億</div>
                         <div class="text-gray-600 text-sm mt-1">新台幣</div>
                     </div>
                     <div class="stat-card">
                         <div class="text-gray-600 text-sm flex items-center">
                             <i class="fas fa-percent mr-2"></i>毛利率
                         </div>
-                        <div class="text-2xl font-bold text-purple-700 mt-2">48.1%</div>
+                        <div class="text-2xl font-bold text-purple-700 mt-2">49.13%</div>
                         <div class="text-gray-600 text-sm mt-1">符合預期</div>
                     </div>
                     <div class="stat-card">
                         <div class="text-gray-600 text-sm flex items-center">
                             <i class="fas fa-coins mr-2"></i>EPS
                         </div>
-                        <div class="text-2xl font-bold text-amber-600 mt-2">18.43元</div>
-                        <div class="text-gray-600 text-sm mt-1">季增23.3%</div>
+                        <div class="text-2xl font-bold text-amber-600 mt-2">17.50元</div>
+                        <div class="text-gray-600 text-sm mt-1">年增8.09%</div>
                     </div>
                 </div>
             </div>
@@ -987,7 +986,7 @@
                     
                     <div class="mb-4">
                         <label for="pe-current-eps" class="block text-gray-700 text-sm font-bold mb-2">
-                            <i class="fas fa-coins mr-1"></i>當前EPS (元) (2024E):
+                            <i class="fas fa-coins mr-1"></i>當前EPS (元) (2024年):
                         </label>
                         <input
                             id="pe-current-eps"
@@ -1005,7 +1004,7 @@
                             id="pe-ratio"
                             type="number"
                             step="1"
-                            value="25"
+                            value="20"
                             class="w-full py-2 px-3 text-gray-700 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                     </div>
@@ -1016,11 +1015,11 @@
                         <p class="text-sm text-blue-800 font-bold mb-2">基於預設參數的估價範圍</p>
                         <div class="space-y-2">
                             <div class="flex justify-between">
-                                <span class="text-blue-700">便宜價 (本益比 20x):</span>
+                                <span class="text-blue-700">便宜價 (本益比 15x):</span>
                                 <span id="pe-cheap-price" class="font-bold"></span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-blue-700">合理價 (本益比 25x):</span>
+                                <span class="text-blue-700">合理價 (本益比 20x):</span>
                                 <span id="pe-fair-price" class="font-bold"></span>
                             </div>
                             <div class="flex justify-between">
@@ -1042,7 +1041,7 @@
                     
                     <div class="mb-3">
                         <label for="dcf-current-eps" class="block text-gray-700 text-sm font-bold mb-2">
-                            <i class="fas fa-coins mr-1"></i>當前EPS (元) (2024E):
+                            <i class="fas fa-coins mr-1"></i>當前EPS (元) (2024年):
                         </label>
                         <input
                             id="dcf-current-eps"
@@ -1133,7 +1132,7 @@
                     
                     <div class="mb-4">
                         <label for="ps-current-sales" class="block text-gray-700 text-sm font-bold mb-2">
-                            <i class="fas fa-money-bill mr-1"></i>年營收 (百萬新台幣) (2024E):
+                            <i class="fas fa-money-bill mr-1"></i>年營收 (百萬新台幣) (2024年):
                         </label>
                         <input
                             id="ps-current-sales"
@@ -1296,7 +1295,7 @@
             <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-2xl shadow-inner border border-gray-200">
                     <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                        <i class="fas fa-mobile-alt mr-2"></i>終端應用營收佔比 (2024E)
+                        <i class="fas fa-mobile-alt mr-2"></i>終端應用營收佔比 (2024)
                     </h3>
                     <div class="chart-container">
                         <canvas id="revenueByApplicationChart"></canvas>
@@ -1304,7 +1303,7 @@
                 </div>
                 <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-2xl shadow-inner border border-blue-200">
                     <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                        <i class="fas fa-globe-asia mr-2"></i>區域營收佔比 (2024E)
+                        <i class="fas fa-globe-asia mr-2"></i>區域營收佔比 (2024)
                     </h3>
                     <div class="chart-container">
                         <canvas id="revenueByRegionChart"></canvas>
@@ -1348,15 +1347,15 @@
 
         const defaultValuationParams = {
             pe: {
-                currentEps: financialData.find(d => d.year === '2024E').eps,
+                currentEps: financialData.find(d => d.year === '2024').eps,
                 multiples: {
-                    cheap: 20,
-                    fair: 25,
+                    cheap: 15,
+                    fair: 20,
                     expensive: 30
                 }
             },
             dcf: {
-                currentEps: financialData.find(d => d.year === '2024E').eps,
+                currentEps: financialData.find(d => d.year === '2024').eps,
                 growthRates: {
                     cheap: 0.15,
                     fair: 0.18,
@@ -1375,7 +1374,7 @@
                 years: 5
             },
             ps: {
-                currentSales: financialData.find(d => d.year === '2024E').revenue, // In Million NTD
+                currentSales: financialData.find(d => d.year === '2024').revenue, // In Million NTD
                 sharesOutstanding: 1600000000, // Approximately 1.6 billion shares outstanding for MediaTek
                 multiples: {
                     cheap: 3.0,

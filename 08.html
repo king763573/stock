@@ -376,7 +376,7 @@
             { quarter: '2023Q2', revenue: 100551, netIncome: 9523, eps: 3.14 },
             { quarter: '2023Q3', revenue: 107795, netIncome: 11029, eps: 3.6 },
             { quarter: '2023Q4', revenue: 100020, netIncome: 10365, eps: 3.45 },
-            { quarter: '2024Q1', revenue: 91297, netIncome: 6967, eps: 2.22 },
+            { quarter: '2024Q1', revenue:  91297, netIncome: 6967, eps: 2.22 },
             { quarter: '2024Q2', revenue: 103443, netIncome: 11954, eps: 3.83 },
             { quarter: '2024Q3', revenue: 112203, netIncome: 14146, eps: 4.75 },
             { quarter: '2024Q4', revenue: 114202, netIncome: 7322, eps: 2.76 },
@@ -1278,7 +1278,7 @@
             <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-2xl shadow-inner border border-gray-200">
                     <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                        <i class="fas fa-cubes mr-2"></i>終端應用營收佔比 (2024E)
+                        <i class="fas fa-cubes mr-2"></i>終端應用營收佔比 (2024)
                     </h3>
                     <div class="chart-container">
                         <canvas id="revenueByApplicationChart"></canvas>
@@ -1504,7 +1504,8 @@
 
             const grossMarginChartCtx = document.getElementById('grossMarginChart');
             if (grossMarginChartCtx) {
-                charts.grossMarginChart = new Chart(grossMarginCtx, {
+                // FIX: Corrected variable name from grossMarginCtx to grossMarginChartCtx
+                charts.grossMarginChart = new Chart(grossMarginChartCtx, {
                     type: 'line',
                     data: {
                         labels: financialData.map(d => d.year),
@@ -1523,7 +1524,8 @@
 
             const operatingMarginChartCtx = document.getElementById('operatingMarginChart');
             if (operatingMarginChartCtx) {
-                charts.operatingMarginChart = new Chart(operatingMarginCtx, {
+                // FIX: Corrected variable name from operatingMarginCtx to operatingMarginChartCtx
+                charts.operatingMarginChart = new Chart(operatingMarginChartCtx, {
                     type: 'line',
                     data: {
                         labels: financialData.map(d => d.year),
@@ -1542,7 +1544,8 @@
 
             const netProfitMarginChartCtx = document.getElementById('netProfitMarginChart');
             if (netProfitMarginChartCtx) {
-                charts.netProfitMarginChart = new Chart(netProfitMarginCtx, {
+                 // FIX: Corrected variable name from netProfitMarginCtx to netProfitMarginChartCtx
+                charts.netProfitMarginChart = new Chart(netProfitMarginChartCtx, {
                     type: 'line',
                     data: {
                         labels: financialData.map(d => d.year),

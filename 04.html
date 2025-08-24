@@ -1705,7 +1705,7 @@
 
             const grossMarginChartCtx = document.getElementById('grossMarginChart');
             if (grossMarginChartCtx) {
-                charts.grossMarginChart = new Chart(grossMarginCtx, {
+                charts.grossMarginChart = new Chart(grossMarginChartCtx, { // FIX: Changed grossMarginCtx to grossMarginChartCtx
                     type: 'line',
                     data: {
                         labels: financialData.map(d => d.year),
@@ -1748,7 +1748,7 @@
 
             const operatingMarginChartCtx = document.getElementById('operatingMarginChart');
             if (operatingMarginChartCtx) {
-                charts.operatingMarginChart = new Chart(operatingMarginCtx, {
+                charts.operatingMarginChart = new Chart(operatingMarginChartCtx, { // FIX: Changed operatingMarginCtx to operatingMarginChartCtx
                     type: 'line',
                     data: {
                         labels: financialData.map(d => d.year),
@@ -1791,7 +1791,7 @@
 
             const netProfitMarginChartCtx = document.getElementById('netProfitMarginChart');
             if (netProfitMarginChartCtx) {
-                charts.netProfitMarginChart = new Chart(netProfitMarginCtx, {
+                charts.netProfitMarginChart = new Chart(netProfitMarginChartCtx, { // FIX: Changed netProfitMarginCtx to netProfitMarginChartCtx
                     type: 'line',
                     data: {
                         labels: financialData.map(d => d.year),
@@ -1834,7 +1834,7 @@
 
             const roeRoaChartCtx = document.getElementById('roeRoaChart');
             if (roeRoaChartCtx) {
-                charts.roeRoaChart = new Chart(roeRoaChartCtx, {
+                charts.roeRoaChart = new Chart(roeRoaChartCtx, { // FIX: Changed roeRoaChartCtx to roeRoaChartCtx
                     type: 'line',
                     data: {
                         labels: roeRoaData.map(d => d.year),
